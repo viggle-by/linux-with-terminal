@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eaglercraft Launcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e1e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Eaglercraft Launcher</h1>
+
+<button onclick="launchGame('eagler')">Launch Eaglercraft 1.12.2</button>
+<button onclick="launchGame('astra')">Launch Astra Client</button>
+
+<script>
+    function launchGame(client) {
+        let url = '';
+        if (client === 'eagler') {
+            url = 'https://example.com/eaglercraft'; // Replace with Eaglercraft URL
+        } else if (client === 'astra') {
+            url = 'https://example.com/astra'; // Replace with Astra Client URL
+        }
+
+        // Open in a popup window
+        const width = 800;
+        const height = 600;
+        const left = (screen.width / 2) - (width / 2);
+        const top = (screen.height / 2) - (height / 2);
+        window.open(url, '_blank', `width=${width},height=${height},top=${top},left=${left},resizable=yes`);
+    }
+</script>
+
+</body>
+</html>
+
